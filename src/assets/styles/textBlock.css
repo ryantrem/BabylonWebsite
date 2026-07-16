@@ -1,10 +1,10 @@
 
 .content-container > .text-block {
-    width: 1200px;
+    width: 100%;
+    max-width: 1200px;
     margin: 0 auto;
-    padding: 0;
     color: #E2E2E2;
-    padding: 0 !important;
+    padding: 0 15px !important;
 }
 
 .content-container > .text-block .inner-container {
