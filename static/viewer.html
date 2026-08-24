@@ -4,10 +4,7 @@
     <title>Babylon Viewer Demo</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script
-      type="module"
-      src="https://cdn.jsdelivr.net/npm/@babylonjs/viewer@9.0.0/dist/babylon-viewer.esm.min.js"
-    ></script>
+    <script type="module" src="/assets/js/viewerLoader.js"></script>
     <style>
       html,
       body {
@@ -21,8 +18,11 @@
   </head>
   <body>
     <script>
+      // The viewer loader accepts a ?viewer=lite|full override; drop it here so it
+      // is not swept into the model URL by the search parsing below.
+      const search = location.search.replace(/[?&]viewer=(?:lite|full)\b/g, "");
       const url =
-        location.search.split("url=").pop() ||
+        search.split("url=").pop() ||
         "https://raw.githubusercontent.com/BabylonJS/Assets/master/meshes/ufo.glb";
 
       document.body.innerHTML = `
